@@ -1,5 +1,5 @@
 # Secure Authentication API with Email Verification
-
+The frontend may be seen here: https://github.com/sachen-pather/AuthenticationProject-frontend-full-version
 ## Overview
 This .NET Web API implements secure user authentication with email verification capabilities. Built using ASP.NET Core, the system provides robust user management with features including registration, login, and email verification flows. It utilizes Cosmos DB for data storage and Gmail SMTP services for sending verification emails. A demonstration of the system can be seen in the images below.
 The deployed system may be seen here https://white-plant-0e13da003.4.azurestaticapps.net/, however at the time of viewing the API which transmits data will may longer be running due to privacy reasons, hence the graph displaying data will not be present.
