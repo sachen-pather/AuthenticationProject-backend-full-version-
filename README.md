@@ -30,6 +30,7 @@ Additonally, the password storage makes use of password hashing (salted) using e
 * MailKit for email services
 * Microsoft Identity for password handling
 * Gmail SMTP for email delivery
+* React frontend, although if forked can use any
 
 ## File Structure
 ```
