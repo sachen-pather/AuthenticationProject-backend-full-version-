@@ -3,7 +3,7 @@ using MimeKit;
 using MailKit.Net.Smtp; // Add this for SmtpClient
 
 
-/********************************************************************************************************************************************/
+/********************************************************************************************************************************************
 // This file defines the EmailService class and the IEmailService interface for sending verification emails.
 // The IEmailService interface declares a method for sending a verification email asynchronously.
 // The EmailService class implements the IEmailService interface and provides the functionality to send verification emails using SMTP.
@@ -16,7 +16,7 @@ using MailKit.Net.Smtp; // Add this for SmtpClient
 //   - Constructs the email message with a verification link.
 //   - Sends the email using the MailKit SMTP client.
 //   - Logs the email sending process and any exceptions that occur.
-/********************************************************************************************************************************************/
+********************************************************************************************************************************************/
 
 namespace LoginPage.Services
 {
