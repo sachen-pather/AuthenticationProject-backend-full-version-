@@ -1,0 +1,191 @@
+﻿
+
+@*
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;  // No layout for login page
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Secure Application</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --background-color: #f3f4f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .login-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        .login-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .validation-message {
+            color: #dc2626;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .register-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2 class="login-title">Welcome back</h2>
+            <p class="login-subtitle">Please sign in to your account</p>
+        </div>
+
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="validation-message">@ViewData["ErrorMessage"]</div>
+        }
+
+        <form method="post" action="@Url.Action("Login", "Account")">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email"
+                       id="email"
+                       name="Email"
+                       class="form-input"
+                       required
+                       placeholder="Enter your email"
+                       autocomplete="email" />
+                @Html.ValidationMessage("Email", new { @class = "validation-message" })
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password"
+                       id="password"
+                       name="Password"
+                       class="form-input"
+                       required
+                       placeholder="Enter your password"
+                       autocomplete="current-password" />
+                @Html.ValidationMessage("Password", new { @class = "validation-message" })
+            </div>
+
+            <button type="submit" class="login-button">Sign in</button>
+        </form>
+
+        <div class="register-link">
+            Don't have an account? <a href="@Url.Action("Register", "Account")">Create an account</a>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add any client-side validation or interaction logic here
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                e.preventDefault();
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>
+*@
