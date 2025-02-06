@@ -7,6 +7,26 @@ using Newtonsoft.Json;
 using LoginPage;
 using LoginPage.Services;
 
+/********************************************************************************************************************************************
+ This file configures and builds the web application using the WebApplicationBuilder class.
+ It sets up services, middleware, and the HTTP request pipeline for the application.
+ Key components and their purposes:
+ - Import required namespaces for authentication, database access, and JSON handling.
+ - Create a new WebApplicationBuilder instance to configure the application.
+ - Add MVC services to enable controller and view functionality.
+ - Configure and register the Cosmos DB client as a singleton service for database access.
+ - Add and configure the EmailService for sending emails.
+ - Configure the authentication system to use cookie-based authentication.
+ - Register the password hasher service with scoped lifetime.
+ - Configure CORS to allow requests from the React frontend.
+ - Build the application using the configured services.
+ - Configure the HTTP request pipeline with middleware for error handling, HTTPS redirection, static files, CORS, routing, authentication, and authorization.
+ - Initialize and verify the Cosmos DB connection.
+ - Configure default routing pattern for the application.
+- Start the application.
+
+********************************************************************************************************************************************/
+
 // Create a new WebApplicationBuilder instance which provides the framework for configuring the application
 var builder = WebApplication.CreateBuilder(args);
 

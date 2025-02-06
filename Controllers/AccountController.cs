@@ -13,6 +13,27 @@ using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 namespace LoginPage.Controllers
+
+/********************************************************************************************************************************************
+ This file defines the AccountController class, which handles authentication-related operations such as user login, registration, and logout.
+ Key components and their purposes:
+ - Import required namespaces for authentication, identity management, and database operations.
+ - Define the AccountController class with properties and methods to handle authentication.
+ - Properties:
+   - _cosmosClient: An instance of CosmosClient to interact with the Cosmos DB.
+   - _container: A container instance to perform database operations.
+   - _passwordHasher: An instance of IPasswordHasher to hash and verify passwords.
+   - _emailService: An instance of IEmailService to send verification emails.
+   - _configuration: An instance of IConfiguration to access app settings.
+ - Constructor: Initializes the properties with the provided dependencies.
+ - Methods:
+   - Login (GET): Returns the login view for user authentication.
+   - Login (POST): Processes login attempts and manages user authentication.
+   - VerifyEmail: Verifies the user's email using a token.
+   - Register: Handles new user registration and sends a verification email.
+   - Logout: Handles the user logout process.
+********************************************************************************************************************************************/
+
 {
     /// <summary>
     /// Controller responsible for handling all authentication-related operations

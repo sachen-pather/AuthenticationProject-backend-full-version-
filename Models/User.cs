@@ -1,5 +1,22 @@
 ﻿using Newtonsoft.Json;
 
+/********************************************************************************************************************************************
+ This file defines the User class, which represents a user in the application.
+ Key components and their purposes:
+ - Import required namespace for JSON handling.
+ - Define the User class with properties to store user information.
+ - Use JsonProperty attributes to map class properties to JSON properties.
+ - Properties:
+   - Id: Unique identifier for the user.
+   - Username: Username of the user.
+   - PasswordHash: Hashed password of the user.
+   - Email: Email address of the user.
+   - Type: Type of the user, default is "User".
+   - EmailVerified: Indicates whether the user's email is verified.
+   - VerificationToken: Token used for email verification.
+   - VerificationTokenExpiry: Expiry date and time for the verification token.
+**************************************************************************************/
+
 public class User
 {
     [JsonProperty(PropertyName = "id")]
