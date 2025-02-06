@@ -12,6 +12,9 @@ A demonstration of the system can be seen in the images below.
 ![Screenshot_2025-02-06-16-02-36-893_com brave browser](https://github.com/user-attachments/assets/3f80e243-8f03-4c7c-9bcc-fc413cde0ab3)
 ![Screenshot_2025-02-06-15-52-48-526_com miui videoplayer](https://github.com/user-attachments/assets/aed16e34-2f76-4ac5-a58b-23170f071cf8)
 
+Additonally, the password storage makes use of password hashing (salted) using encryption built into Visual Studios which can be seen in the database storage below:
+![image](https://github.com/user-attachments/assets/3498e5c7-192b-4d0a-b734-3b83c1532321)
+
 
 ## Features
 * User registration with email verification
